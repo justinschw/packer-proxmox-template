@@ -46,7 +46,7 @@ variable "disk_size" {
 
 variable "disk_storage_pool" {
   type    = string
-  default = "local-lvm"
+  default = "vm-tank"
 }
 
 variable "cpu_type" {
