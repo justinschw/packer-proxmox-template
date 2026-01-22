@@ -145,12 +145,6 @@ source "proxmox-iso" "debian" {
 build {
   sources = ["source.proxmox-iso.debian"]
 
-  provisioner "shell" {
-    inline = [
-      "curl -sfL https://get.k3s.io | sh -"
-    ]
-  }
-
   provisioner "file" {
     destination = "/etc/cloud/cloud.cfg"
     source      = "${path.root}/cloud.cfg"
