@@ -145,6 +145,12 @@ source "proxmox-iso" "debian" {
 build {
   sources = ["source.proxmox-iso.debian"]
 
+  provisioner "shell" {
+    inline = [
+      "apt-get update -y",
+      "apt-get install -y qemu-guest-agent"
+    ]
+  }
   provisioner "file" {
     destination = "/etc/cloud/cloud.cfg"
     source      = "${path.root}/cloud.cfg"
