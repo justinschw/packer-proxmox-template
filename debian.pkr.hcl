@@ -148,7 +148,7 @@ build {
   provisioner "shell" {
     inline = [
       "apt-get update -y",
-      "apt-get install -y qemu-guest-agent"
+      "apt-get install -y python3-botocore python3-boto3"
     ]
   }
   provisioner "file" {
